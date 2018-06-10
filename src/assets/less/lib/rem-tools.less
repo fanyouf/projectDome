@@ -1,0 +1,28 @@
+/*px--rem*/
+@basicRate:120px; /* 设计稿的 1/10 */
+.w(@v){width:@v/@basicRate*1rem;}
+.h(@v){height:@v/@basicRate*1rem;}
+.mh(@v){max-height:@v/@basicRate*1rem;}
+.lh(@v){line-height: @v/@basicRate*1rem;};
+.pl(@v){padding-left:@v/@basicRate*1rem;}
+.pr(@v){padding-right:@v/@basicRate*1rem;}
+.padding(@t,@r,@b,@l){
+    padding: @t/@basicRate*1rem @r/@basicRate*1rem @b/@basicRate*1rem @l/@basicRate*1rem;
+}
+.margin(@t,@r,@b,@l){
+    margin: @t/@basicRate*1rem @r/@basicRate*1rem @b/@basicRate*1rem @l/@basicRate*1rem;
+}
+.mb(@t){margin-bottom: @t/@basicRate*1rem;}
+.mt(@t){margin-top: @t/@basicRate*1rem;}
+
+.background-position-x(@x){
+    background-position-x: @x/@basicRate*1rem;
+}
+.background-size(@w,@h){ background-size: @w/@basicRate*1rem @h/@basicRate*1rem;}
+.border-radius(@w){
+            border-radius: @w/@basicRate*1rem;
+    -webkit-border-radius: @w/@basicRate*1rem;
+}
+.bottom(@v){bottom:@v/@basicRate*1rem;}
+.top(@v){top:@v/@basicRate*1rem;}
+.fs(@v){font-size:@v/@basicRate*1rem;}

@@ -1,0 +1,150 @@
+@import "../lib/rem-tools.less";
+.card-content{
+  .padding(10,10,20,20);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .card-content-detailCard{
+    flex: 1 1 atuo;
+    .w(181);
+    .pr(10.8);
+
+    .card-content-card{
+      .h(200);
+      .w(181);
+      background: #F5F5F5;
+    }
+  }
+}
+
+.card{
+  padding:10px 20px;
+  border:1px solid #ddd;
+  border-radius: 5px;
+  margin:5px;
+
+  //每个模块查询条件区域
+  .self-cond{
+    .pl(20);
+    .pr(20);
+    margin-left: 20px;
+    line-height:60px;
+    vertical-align: middle;
+    background: #F5F5F5;
+  }
+  .self-cond > div, .self-cond > div > div{
+    display: inline-block;
+  }
+
+  .card-padding{
+    .pr(20);
+    .pl(20);
+    align-items: center;
+  }
+
+  .align-right{
+    text-align: right;
+  }
+
+  .padding{
+    padding-top: 10px;
+  }
+}
+
+.float-left{
+  float:left;
+}
+
+.float-right{
+  float:right;
+}
+
+.common-select{
+  width:128px;
+}
+
+//公共查询区域
+.condition{
+  .pl(10);
+  .pr(10);
+  .select{
+    .w(382);
+    //.h(32);
+    vertical-align: middle;
+  }
+}
+
+.date{
+  .w(150);
+  .h(32);
+}
+
+.btn{
+  .w(80);
+  float:right;
+  padding-top:14px;
+}
+
+.chart-width{
+  .w(1150);
+}
+
+.saledetail{
+  .cell{
+    padding-left: 0px;
+    padding-right: 0px;
+    line-height: 28px;
+  }
+  .el-table td{
+    padding-top:0px;
+    padding-bottom:0px;
+  }
+  .el-table th{
+    padding-top:0px;
+    padding-bottom:0px;
+  }
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.align-left{
+  text-align: left;
+}
+
+.align-right{
+  text-align: right;
+}
+
+.half-width{
+  width:50%;
+}
+
+.pr20{
+  padding-right: 20px;
+}
+
+.title-border{
+  .pl(20);
+  .pr(20);
+  margin-left: 20px;
+  line-height:3px;
+  vertical-align: middle;
+  background: #F5F5F5;
+}
+
+.common-padding{
+  .pl(20);
+  .pr(20);
+  margin-left: 20px;
+  padding-top: 5px;
+}
+
+.chart-title{
+  font-family: MicrosoftYaHei-Bold;
+  font-size: 14px;
+  color: #333333;
+  padding-top:20px;
+}
+

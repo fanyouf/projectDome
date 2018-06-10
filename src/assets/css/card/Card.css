@@ -1,0 +1,29 @@
+.card{
+  padding: 5px;
+}
+.card .ivu-card-extra{
+  top:2px;
+  right:4px;
+}
+.card .ivu-card-body{
+  padding: 5px;
+}
+
+.subject-title{
+  font-family: 'Arial Rounded MT Bold';
+  font-size:14px;
+}
+
+.subject-value{
+  font-family: 'Arial-BoldMT';
+  font-size: 26px;
+  color: #333333;
+  line-height: 26px;
+  padding-bottom: 10px;
+}
+
+.text-hidden{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}

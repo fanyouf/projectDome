@@ -1,0 +1,222 @@
+@import "../lib/rem-tools.less";
+.board{
+  .w(1200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .check-card {
+    //padding: 10px 20px;
+    //.padding(21,0,21,0);
+    //padding:21px 0px 21px 0px;
+    padding-top:21px;
+    padding-bottom:21px;
+    .pr(5);
+    .pl(5);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    .margin(5,5,5,5);
+  }
+
+  .left{
+    flex: 1 1 atuo;
+    .pl(5);
+    //.margin(0,10,0,0);
+    .w(830);
+
+    ///* 兼容写法，要放在@keyframes前面 */
+    //@-webkit-keyframes animate {
+    //  /* 背景从-100px的水平位置，移动到+100px的水平位置。如果要移动Y轴的，设置第二个数值 */
+    //  from {background-position: -100px;}
+    //  to {background-position: 100px;}
+    //}
+    //@keyframes animate {
+    //  from {background-position: -100px;}
+    //  to {background-position: 100px;}
+    //}
+
+    .reached{
+      .w(410);
+      display: inline-block;
+      .check-card{
+        height: 120px;
+        background:  linear-gradient(-135deg, #78C9EF 0%, #61ADE0 100%);
+
+        /* 背景颜色线性渐变 */
+        /* 老式写法 */
+        /* linear为线性渐变，也可以用下面的那种写法。left top，right top指的是渐变方向，左上到右上 */
+        /* color-stop函数，第一个表示渐变的位置，0为起点，0.5为中点，1为结束点；第二个表示该点的颜色。所以本次渐变为两边灰色，中间渐白色 */
+        //background: -webkit-gradient(linear, left top, right top, color-stop(0, #61ADE0), color-stop(.45, #78C9EF), color-stop(.5, #F5f5f7), color-stop(.55, #78C9EF), color-stop(1, #61ADE0));
+        //
+        ///* 设置为text，意思是把文本内容之外的背景给裁剪掉 */
+        ////-webkit-background-clip: text;
+        ///* 设置对象中的文字填充颜色 这里设置为透明 */
+        ////-webkit-text-fill-color: transparent;
+        ///* 每隔2秒调用下面的CSS3动画 infinite属性为循环执行animate */
+        //-webkit-animation: animate 2s infinite;
+
+        .main-font{
+          font-size: 42px;
+          line-height: 42px;
+          color: #ffffff;
+        }
+
+        .card-subject{
+          font-family: PingFangSC-Semibold;
+          font-size: 14px;
+          color: #ffffff;
+          line-height: 14px;
+          display: inline-block;
+        }
+      }
+    }
+    .time{
+      .w(410);
+      display: inline-block;
+      .check-card{
+        height: 120px;
+        background:  linear-gradient(-135deg, #78C9EF 0%, #61ADE0 100%);
+        .main-font{
+          font-size: 42px;
+          line-height: 42px;
+          color: #ffffff;
+        }
+
+        .card-subject{
+          font-family: PingFangSC-Semibold;
+          font-size: 14px;
+          color: #ffffff;
+          line-height: 14px;
+          display: inline-block;
+        }
+      }
+    }
+
+    .target{
+      .w(270);
+      .margin(0,2,0,0);
+      display: inline-block;
+      .check-card{
+        height: 194px;
+        background: #F5F5F5;
+        .main-font{
+          font-size: 42px;
+          line-height: 42px;
+          color: #47A7E7;
+        }
+        .border-top{
+          border-top: 1px solid #FFFFFF;
+        }
+        .yoy{
+          margin-top: 20px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .mom{
+          margin-top: 50px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .text{
+          display: inline-block;
+          width: 50%;float: left;
+          text-align:left;
+        }
+        .percent{
+          display: inline-block;
+          width: 50%;float: right;
+          text-align:right;
+        }
+
+        .card-subject{
+          font-family: PingFangSC-Semibold;
+          font-size: 14px;
+          color: #666666;
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .right{
+    flex: 1 1 atuo;
+    .w(370);
+    .pl(5);
+
+    .cate{
+      .w(175);
+      .pl(10);
+      //.margin(0,10,0,0);
+      display: inline-block;
+      .check-card{
+        height: 157px;
+        background: #F5F5F5;
+        .main-font{
+          font-size: 36px;
+          line-height: 36px;
+          color: #333333;
+        }
+
+        .card-subject{
+          font-family: PingFangSC-Semibold;
+          font-size: 14px;
+          color: #666666;
+          line-height: 14px;
+          display: inline-block;
+        }
+      }
+    }
+    .saler{
+      .w(305);
+      display: inline-block;
+      .check-card{
+        height: 157px;
+        background: #F5F5F5;
+        .main-font{
+          font-size: 36px;
+          line-height: 36px;
+          color: #333333;
+        }
+
+        .card-subject{
+          font-family: PingFangSC-Semibold;
+          font-size: 14px;
+          color: #666666;
+          line-height: 14px;
+          display: inline-block;
+        }
+      }
+    }
+    .sku{
+      .w(355);
+      .pl(10);
+      display: inline-block;
+      .check-card{
+        height: 157px;
+        background: #F5F5F5;
+        .main-font{
+          font-size: 36px;
+          line-height: 36px;
+          color: #333333;
+        }
+
+        .card-subject{
+          font-family: PingFangSC-Semibold;
+          font-size: 14px;
+          color: #666666;
+          line-height: 14px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .text-hidd{
+    //text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .value-padding-top{
+    padding-top:5px;
+  }
+}

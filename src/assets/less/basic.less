@@ -1,0 +1,350 @@
+@import "./lib/rem-tools.less";
+@import "./element-extend.less";
+@import "./iview-extend.less";
+@import "./tool.less";
+
+@nice-blue: #47A7E7;
+
+.icon {
+   width: 1em; height: 1em;
+   // vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+   cursor: pointer;
+}
+
+.icon-btn{
+  //border:1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  box-sizing:border-box;
+  &:hover{
+    box-shadow: 1px 1px 3px solid #333;
+    //border:1px solid @nice-blue;
+    font-weight: bold;
+  }
+}
+.icon-btn-current{
+  box-shadow: 1px 1px 3px solid #333;
+  border:1px solid @nice-blue;
+}
+
+html{
+  font-size: 120px;
+}
+body{
+  font-family: 'MicrosoftYaHei-Bold';
+  .fs(14);
+  background-color: rgb(242,242,242);
+}
+.menu{
+  // .lh(60);
+  // .h(60);
+  // height: 60px;
+  // line-height: 60px;
+}
+
+.page { /*完整的页面*/
+  .w(1200);
+  margin:0 auto;
+  display: flex;
+  .analyzeBoard{
+    padding:15px;
+    .analyzeBoard-title{
+      .fs(16);
+      color:#333;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height:50px;
+    }
+
+    .analyzeBoard-title:after{
+      position: absolute;
+      bottom:0;
+      content: "";
+      left:0;right:0;height: 1px;
+      background-color: #ccc;
+    }
+    .analyzeBoard-condition{
+      .pl(10);
+      .mb(10);
+      display: flex;
+      align-items: center;
+      height:50px;
+      background-color:#f5f5f5;
+      justify-content: space-between;
+      .analyzeBoard-condition-btns{
+        display: flex;
+        align-items: center;
+        // flex:1 1 atuo;
+        >div{margin-right: 10px;}
+      }
+      .analyzeBoard-condition-icons{
+        .iconfont{.fs(24);}
+        margin-left: auto;
+        margin-right:20px;
+      }
+    }
+
+    .analyzeBoard-content{
+      .analyzeBoard-content-title{
+        .fs(14);font-weight: bold;color:#333;
+        .icon-btn{
+          width: 1em;
+          height: 1em;
+        }
+        display: flex;
+        justify-content: space-between;
+      }
+      .mh(500);
+      overflow: hidden;
+    }
+    // 分析看板中的漏斗图 散点图
+    .ve-funnel, .ve-scatter{
+      flex: 1 1 auto;
+    }
+
+
+  }
+
+  .sideBar{
+    .w(252);
+    .padding(10,10,10,10);
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(0,0,0,.3);
+    margin-top:10px;
+    margin-right:10px;
+    .ivu-cascader{
+      width: 100%;
+    }
+    .sideBarTool{
+
+    }
+    .sideBarTool_btns{
+      .margin(10,0,10,0);
+      display: flex;align-items: center;justify-content:space-between;
+      .bold{color: red} /*搜索框中有刷选条件，表示强调*/
+      .ivu-btn{
+        .w(100);
+      }
+      .icon-btn{width: 30px;height: 30px;}
+      .tool{display: flex;align-items: center;}
+      .ivu-radio-group{   /*单选组*/
+        display: flex;flex-direction:column; /*垂直排列*/
+        height: 100%;
+        overflow: hidden;
+        // .w(200);
+      }
+      .ivu-poptip-body{
+      }
+    }
+  }
+
+  .mainContainer {
+    .w(1200-262);
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(0,0,0,.3);
+    margin-top:10px;
+    flex: 1 1 auto;
+
+    .nav-level1{
+      line-height: 50px;
+      height: 50px;
+      background-color: #f7f7f7;
+      font-size: 14px;
+      span{
+        display: inline-block;cursor: pointer;width: 94px;position: relative;text-align: center;
+      }
+      .current{color: @nice-blue;}
+      .current::after{
+        content: "";position: absolute;height: 2px;width: 94px;left:0;bottom:0;
+        background-color: @nice-blue;
+      }
+    }
+    .nav-level2{
+      margin-left:14px;
+      margin-top: 17px;
+      button{
+      }
+    }
+  }
+}
+
+.tablistArea{
+  .padding(0,10,10,10);
+  .h4{
+    font-weight: bold;
+    font-family: MicrosoftYaHei-Bold;
+    .lh(16);
+    .fs(14);
+    color:#333;
+    .mt(10);
+    .mb(10);
+  }
+  .el-table .cell{padding-left:5px;padding-right: 5px;}
+}
+/*单独的卡片*/
+
+.card {
+  margin: 5px;
+  .card-title{
+    position: relative;
+    margin-left:20px;
+    display:flex;
+    align-items: center;
+    line-height: 50px;
+    h4{font-size: 15px;}
+    &::after{
+      content: "";position: absolute;width: 100%;height: 1px;left:0px;bottom:0px; background-color:#ccc;
+    }
+  }
+  .card-title-btns {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row-reverse;
+
+    .ivu-icon {
+      margin: 0 3px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  }
+}
+
+.conditionBar{
+  display: flex;
+  align-items:center;
+  justify-content: space-between; /*左边是时间与周期 ，右边是按钮s*/
+  height: 40px;
+  background-color: #f5f5f5;
+  .padding(0,10,0,10);
+  font-size: 14px;
+
+  .conditionBar-btns{
+    .flexa;
+    button{
+      margin-left:5px;
+    }
+  }
+  .ivu-radio-wrapper.ivu-radio-group-item.ivu-radio-wrapper-checked{
+    background-color: #57a3f3; /*#47A7E7*/
+    color: #fff;
+  }
+}
+.toolbar{ /*工具条*/
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  .pl(10);
+  height:40px;
+  line-height: 1;
+  background-color: #F5F5F5;
+  border-top: 1px solid #fff;
+
+  .ivu-switch, .ivu-switch:after{
+    border-radius: 4px;
+  }
+  .ivu-switch-checked .ivu-switch-inner {
+    left: 4px;
+  }
+  .ivu-switch{
+    width:56px;
+  }
+  .ivu-switch-checked:after {
+    left: 32px;
+  }
+  .icon-btn{
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    line-height: 20px;
+    margin-right: 5px;margin-left:5px;
+    &:hover{
+      color:#000;
+    }
+  }
+  .ivu-poptip-body-content{
+    overflow: hidden;
+  }
+  .toolbar-ibtncontainer-attribute .ivu-poptip-popper{
+    width: 300px;
+    // height: 120px;
+  }
+  .toolbar-ibtncontainer-calibration .ivu-poptip-popper{
+    width: 150px;
+    height: 520px;
+  }
+  .toolbar-ibtnbody-title{
+    background-color: #ccc;
+    color:#fff;
+  }
+  .ivu-radio-group{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ivu-radio-wrapper {
+    flex: 0 1 60px;
+  }
+  .btn__modify__total{ /*总值修改*/
+    .ivu-btn{
+      width: 80px;
+      height: 20px;
+      padding: 0px;
+      line-height: 20px;
+      background: #f5f5f5;
+      color: #000;
+      border: none;
+      margin-right: 5px;
+      &:hover{
+        color:#000;
+      }
+    }
+  }
+}
+
+// .forecast{
+//   .padding(15,15,15,15);
+//
+//   .title{
+//     .fs(16);
+//     color:#333;
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     height:50px;
+//     h4{
+//       margin-right: 20px;
+//       flex: 0 0 auto;
+//     }
+//     .ivu-radio-group{
+//       flex: 0 0 auto;
+//       margin-left:20px;
+//     }
+//   }
+//
+//   .title:after{
+//     position: absolute;
+//     bottom:0;
+//     content: "";
+//     left:0;right:0;height: 1px;
+//     background-color: #ccc;
+//   }
+// }
+
+.chartContainer {
+  display: flex;
+  // height: 400px;
+
+  .chart {
+    flex: 1 1 aut0;
+  }
+}
+
+.price {
+
+}
