@@ -15,7 +15,7 @@ import {DropdownMenu, DropdownItem, Menu,
   Pagination,
   Dialog,
   Table,
-  MessageBox
+  MessageBox,
 } from 'element-ui'
 
 import echarts from 'echarts'
@@ -85,17 +85,17 @@ Vue.prototype._error = function (desc) {
   Vue.prototype.$Notice.error({
     title: '操作失败',
     desc,
-    duration: 3
+    duration: 3,
   })
 }
 Vue.prototype._info = function (title) {
   Vue.prototype.$Notice.info({
-    title
+    title,
   })
 }
 Vue.prototype._success = function (title) {
   Vue.prototype.$Notice.success({
-    title
+    title,
   })
 }
 Vue.prototype._loading = function (title = '加载中') {
@@ -103,29 +103,30 @@ Vue.prototype._loading = function (title = '加载中') {
     lock: true,
     text: title,
     spinner: 'el-icon-loading',
-    background: 'rgba(0, 0, 0, 0.7)'
+    background: 'rgba(0, 0, 0, 0.7)',
   })
 }
 
 Vue.prototype._do = (opString, defaultFunction, okFunction, errFunction) => {
-  let arr = opString.split('_') // 获取最后一位标记位。
+  const arr = opString.split('_') // 获取最后一位标记位。
   let flag = false
   if (arr.length === 2 && arr[1].toString().toLowerCase() === 'ok') { // “操作_ok” 只有在这种情况下才会输出操作成功的提示框
     flag = true
   }
   opString = arr[0]
+
   return res => {
     defaultFunction && defaultFunction()
     if (res && res.success) {
-      flag && Vue.prototype._success(opString + '成功！')
+      flag && Vue.prototype._success(`${opString}成功！`)
       okFunction && okFunction(res.data)
     } else {
-      let str = opString + '失败！'
+      let str = `${opString}失败！`
       if (res && res.info && res.info.trim() !== '') {
-        str += '原因是:' + res.info
+        str += `原因是:${res.info}`
       }
       if (res && res.message && res.message.trim() !== '') {
-        str += '原因是:' + res.message
+        str += `原因是:${res.message}`
       }
       Vue.prototype._error(str)
       errFunction && errFunction()
@@ -134,17 +135,17 @@ Vue.prototype._do = (opString, defaultFunction, okFunction, errFunction) => {
 }
 
 Vue.prototype._validate = (cond, vF) => {
-  let rs = vF(cond)
+  const rs = vF(cond)
   if (rs === true) {
     return true
-  } else {
-    Vue.prototype.$Notice.error({
-      title: '条件验证不通过',
-      desc: rs,
-      duration: 3
-    })
-    return false
   }
+  Vue.prototype.$Notice.error({
+    title: '条件验证不通过',
+    desc: rs,
+    duration: 3,
+  })
+
+  return false
 }
 Vue.use(filter)
 Vue.prototype._api = api
@@ -159,8 +160,8 @@ Vue.use(constSetting)
 const eventBus = new Vue()
 Object.defineProperties(Vue.prototype, {
   _bus: {
-    get: () => eventBus
-  }
+    get: () => eventBus,
+  },
 })
 
 // import './components/global.js'
@@ -169,9 +170,9 @@ Object.defineProperties(Vue.prototype, {
 new Vue({
   el: '#app',
   components: {
-    App
+    App,
   },
   template: '<App/>',
   router,
-  store
+  store,
 })
