@@ -54,7 +54,7 @@ const handleResponse = res => {
 //         });
 //     });
 //   }
-//   console.log("发现未捕获异常:" + err);
+//   console.log("发现未捕获异   常:" + err);
 // })
 
 const get = function (url, params, config = {}) {
@@ -65,6 +65,11 @@ const get = function (url, params, config = {}) {
     credentials: 'include',
     mode: 'cors'
   }
+
+
+
+
+
   return fetch(url, Object.assign(defaultSetting, config))
     .then(handleResponse)
 }

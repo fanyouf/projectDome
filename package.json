@@ -1,12 +1,12 @@
 {
-  "name": "sps-ui",
+  "name": "project-demo",
   "version": "1.0.0",
-  "description": "sps-ui",
-  "author": "gaoqiong3",
+  "description": "前后端分离的工程解决方案",
+  "author": "fanyoufu",
   "private": true,
   "scripts": {
-    "dev-server": "echo 启动前端和node && npm run dev1 | npm run server",
-    "dev": "echo 只启动前端 && webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev-server": "echo 启动前端和node && npm run dev | npm run server",
+    "dev": "echo 启动前端... && webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "server": "nodemon  ./server/index.js",
     "unit": "jest --config test/unit/jest.conf.js --coverage",

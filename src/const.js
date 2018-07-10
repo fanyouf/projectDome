@@ -49,15 +49,16 @@ const con = {
 
   E_FORECASTMODIFY: 'E_FORECASTMODIFY' // 预测页上的值修改，要让计划页，或者是目标页去重新加载表格数据
 }
-let proxyConst = new Proxy(con, {
+const proxyConst = new Proxy(con, {
   get: function (target, key, receiver) {
     if (key in target) {
       return target[key]
-    } else {
-      throw new Error(key + '不存在')
     }
+    throw new Error(`${key}不存在`)
   }
 })
+
+
 export default {
   install: function (Vue, options) {
     Vue.prototype._CONST = proxyConst

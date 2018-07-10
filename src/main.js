@@ -79,6 +79,7 @@ Vue.use(Table)
 Vue.prototype._echarts = echarts // 使用 CSS
 Vue.use(iView)
 
+Vue.prototype._echart = require('echarts')
 Vue.prototype.$alert = MessageBox.alert
 Vue.prototype._error = function (desc) {
   Vue.prototype.$Notice.error({

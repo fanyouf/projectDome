@@ -1,4 +1,4 @@
-var vendors = [
+var vendors = [ //  需要提前打包的资源
   'xlsx',
   'lodash',
   'vue/dist/vue.esm.js',
